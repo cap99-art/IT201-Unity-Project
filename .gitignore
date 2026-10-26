@@ -23,5 +23,7 @@ MemoryCaptures/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Ignore unrelated Unity projects and class assignments
 /My project/
 /week 8 guided lesson/
