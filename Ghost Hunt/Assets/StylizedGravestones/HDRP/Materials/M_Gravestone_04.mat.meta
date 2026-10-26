@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 42ea0c8340d6d764a8e88eb48be9c062
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 406078
+  packageName: Stylized Gravestones
+  packageVersion: 1.0
+  assetPath: Assets/StylizedGravestones/HDRP/Materials/M_Gravestone_04.mat
+  uploadId: 990992

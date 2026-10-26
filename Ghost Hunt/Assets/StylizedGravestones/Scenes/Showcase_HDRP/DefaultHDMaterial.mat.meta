@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a7e4ec4f020163049b56cafbc6703551
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 406078
+  packageName: Stylized Gravestones
+  packageVersion: 1.0
+  assetPath: Assets/StylizedGravestones/Scenes/Showcase_HDRP/DefaultHDMaterial.mat
+  uploadId: 990992
