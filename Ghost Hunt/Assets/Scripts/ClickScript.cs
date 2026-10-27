@@ -63,10 +63,7 @@ public class ClickScript : MonoBehaviour
                 score+= 2;
                 Debug.Log("Score = " + score);
             }
-        }
-        else
-        {
-            Debug.Log("You clicked something else.");
+
         }
     }
 
