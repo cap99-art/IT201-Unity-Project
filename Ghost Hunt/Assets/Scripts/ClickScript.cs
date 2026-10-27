@@ -9,7 +9,7 @@ public class ClickScript : MonoBehaviour
     private int score = 0;
     [SerializeField] private GameObject ghost1;
     [SerializeField] private GameObject ghost2;
-    private GameObject[] spawnedObjects = new GameObject[10];
+    private GameObject[] spawnedObjects = new GameObject[15];
 
     // Start is called once before the first execution of Update
     void Start()
@@ -33,7 +33,7 @@ public class ClickScript : MonoBehaviour
         Vector2 mousePos = Mouse.current.position.ReadValue();
 
         Ray ray = Camera.main.ScreenPointToRay(mousePos);
-        Debug.Log("Clicked " + mousePos.ToString() + " ray " + ray.ToString());
+        //Debug.Log("Clicked " + mousePos.ToString() + " ray " + ray.ToString());
 
         Debug.DrawRay(ray.origin, ray.direction * rayDistance, Color.red, 2f);
         if (Physics.Raycast(ray, out RaycastHit hit, rayDistance))
@@ -72,11 +72,11 @@ public class ClickScript : MonoBehaviour
 
     private void SpawnGhosts()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 15; i++)
         {
             //creates a spawn position with the z-axis incrementally
             //changing with each loop so the ghosts end up forming columns
-            Vector3 spawnPos = new Vector3(0f, 0f, (i * 1f));
+            Vector3 spawnPos = new Vector3((i * 2f + 40.9f), 0.27f, 56.79f);
 
             //randomly chooses which ghost to spawn on each loop
             GameObject chosenObject = (UnityEngine.Random.value > 0.5f) ? ghost1 : ghost2;

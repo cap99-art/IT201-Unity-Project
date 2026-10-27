@@ -37,13 +37,13 @@ public class Movement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("RightWall"))
         {
-            Debug.Log("right");
+
             rb.AddForce(Vector3.back * speed);
             rwall = !rwall;
         }
         if (collision.gameObject.CompareTag("LeftWall"))
         {
-            Debug.Log("left");
+
             rb.AddForce(Vector3.forward * speed);
             lwall = !lwall;
             rwall = !rwall;
