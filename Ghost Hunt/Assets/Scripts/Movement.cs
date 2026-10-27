@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GhostMovement : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     [Header("Choose speed")]
     [Range(1, 7)][SerializeField] private int speed = 1;
@@ -11,31 +11,26 @@ public class GhostMovement : MonoBehaviour
     // Start is called once before the first execution of Update
     void Start()
     {
-        //modifies the Rigidbody component inside the object 
-        //with this script to add an initial force to the right
+        //modifies the Rigidbody component inside the object with this script
         rb = GetComponent<Rigidbody>();
-        rb.AddForce(Vector3.right * speed);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if the object touches the right wall, the rigidbody
-        //gets a force to the left, so it moves left. Then vise
-        //versa once the other wall is in contact.
         if (rwall)
         {
-            rb.AddForce(Vector3.left * speed);
+            rb.AddForce(Vector3.back * speed);
         }
         else if (lwall)
         {
-            rb.AddForce(Vector3.right * speed);
+            rb.AddForce(Vector3.forward * speed);
         }
         else
         {
-            rb.AddForce(Vector3.right * speed);
+            rb.AddForce(Vector3.forward * speed);
         }
-    }
+}
     
     //uhhhhhh try deleting this see if it still works, then try calling it in update
     private void OnCollisionEnter(Collision collision)
@@ -43,13 +38,13 @@ public class GhostMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("RightWall"))
         {
             Debug.Log("right");
-            rb.AddForce(Vector3.left * speed);
+            rb.AddForce(Vector3.back * speed);
             rwall = !rwall;
         }
         if (collision.gameObject.CompareTag("LeftWall"))
         {
             Debug.Log("left");
-            rb.AddForce(Vector3.right * speed);
+            rb.AddForce(Vector3.forward * speed);
             lwall = !lwall;
             rwall = !rwall;
         }

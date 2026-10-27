@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ClickAndReact : MonoBehaviour
+public class ClickScript : MonoBehaviour
 {
     [SerializeField] private float rayDistance = 100f;
     private int score = 0;
