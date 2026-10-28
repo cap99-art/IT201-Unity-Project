@@ -9274,7 +9274,7 @@ GameObject:
   - component: {fileID: 1680261345}
   m_Layer: 0
   m_Name: R4
-  m_TagString: LeftWall
+  m_TagString: RightWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
