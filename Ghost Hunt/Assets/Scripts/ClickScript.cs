@@ -73,13 +73,17 @@ public class ClickScript : MonoBehaviour
         {
             //creates a spawn position with the z-axis incrementally
             //changing with each loop so the ghosts end up forming columns
-            Vector3 spawnPos = new Vector3((i * 2f + 40.9f), 0.27f, 56.79f);
+            Vector3 spawnPos = new Vector3((i * 2f + 40.9f), 0.27f, 58.79f);
 
-            //randomly chooses which ghost to spawn on each loop
-            GameObject chosenObject = (UnityEngine.Random.value > 0.5f) ? ghost1 : ghost2;
 
-            //spawns a ghost
-            spawnedObjects[i] = Instantiate(chosenObject, spawnPos, Quaternion.identity);
+            if (i > 7)
+            {
+                spawnedObjects[i] = Instantiate(ghost1, spawnPos, Quaternion.identity);
+            }
+            else
+            {
+                spawnedObjects[i] = Instantiate(ghost2, spawnPos, Quaternion.identity);
+            }
         }
     }
 }
