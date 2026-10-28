@@ -45,16 +45,19 @@ public class ClickScript : MonoBehaviour
             {
                 Debug.Log("Ghosts spawned!");
                 SpawnGhosts();
+                return;
             }
             if (clickedObject.CompareTag("NextScene"))
             {
                 GameObject cam = GameObject.FindWithTag("MainCamera");
                 cam.transform.position = new Vector3(83.17f, 4.82f, 128.6f);
+                return;
             }
             if (clickedObject.CompareTag("PreviousScene"))
             {
                 GameObject cam = GameObject.FindWithTag("MainCamera");
                 cam.transform.position = new Vector3(82.5f, 4.82f, 72.81f);
+                return;
             }
 
 
@@ -74,6 +77,16 @@ public class ClickScript : MonoBehaviour
                 score+= 2;
                 Debug.Log("Score = " + score);
             }
+            else
+            {
+                score = score - 1;
+                if (score < 0)
+                {
+                    score = 0;
+                }
+                Debug.Log("You missed! Score = " + score);
+            }
+
 
         }
     }

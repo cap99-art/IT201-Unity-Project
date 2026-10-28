@@ -1099,6 +1099,18 @@ PrefabInstance:
       value: Gravestone_01 (4)
       objectReference: {fileID: 0}
     - target: {fileID: 7942869097525322293, guid: 09070712a69edca4ab5af3931618e4eb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942869097525322293, guid: 09070712a69edca4ab5af3931618e4eb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942869097525322293, guid: 09070712a69edca4ab5af3931618e4eb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942869097525322293, guid: 09070712a69edca4ab5af3931618e4eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -31.86096
       objectReference: {fileID: 0}
@@ -1437,6 +1449,18 @@ PrefabInstance:
       value: Gravestone_01 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7942869097525322293, guid: 09070712a69edca4ab5af3931618e4eb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942869097525322293, guid: 09070712a69edca4ab5af3931618e4eb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942869097525322293, guid: 09070712a69edca4ab5af3931618e4eb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942869097525322293, guid: 09070712a69edca4ab5af3931618e4eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.4990387
       objectReference: {fileID: 0}
@@ -1492,6 +1516,18 @@ PrefabInstance:
     - target: {fileID: 258803337193345044, guid: 1ec9299476b9e2c49a91a42860114b69, type: 3}
       propertyPath: m_Name
       value: Gravestone_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 638566593829800622, guid: 1ec9299476b9e2c49a91a42860114b69, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 638566593829800622, guid: 1ec9299476b9e2c49a91a42860114b69, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 638566593829800622, guid: 1ec9299476b9e2c49a91a42860114b69, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 638566593829800622, guid: 1ec9299476b9e2c49a91a42860114b69, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3416,6 +3452,18 @@ PrefabInstance:
       value: Gravestone_01 (3)
       objectReference: {fileID: 0}
     - target: {fileID: 7942869097525322293, guid: 09070712a69edca4ab5af3931618e4eb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942869097525322293, guid: 09070712a69edca4ab5af3931618e4eb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942869097525322293, guid: 09070712a69edca4ab5af3931618e4eb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942869097525322293, guid: 09070712a69edca4ab5af3931618e4eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19.26096
       objectReference: {fileID: 0}
@@ -3894,6 +3942,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 302562382}
     m_Modifications:
     - target: {fileID: 6326318619016121253, guid: a323d983331140b4baa852f1fe1384b3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6326318619016121253, guid: a323d983331140b4baa852f1fe1384b3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6326318619016121253, guid: a323d983331140b4baa852f1fe1384b3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6326318619016121253, guid: a323d983331140b4baa852f1fe1384b3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -22.560959
       objectReference: {fileID: 0}
@@ -4146,15 +4206,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7096491854357310036, guid: 724dce3141c495f46b2f2a4819da390d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7096491854357310036, guid: 724dce3141c495f46b2f2a4819da390d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7096491854357310036, guid: 724dce3141c495f46b2f2a4819da390d, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7096491854357310036, guid: 724dce3141c495f46b2f2a4819da390d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4620,6 +4680,18 @@ PrefabInstance:
     - target: {fileID: 258803337193345044, guid: 1ec9299476b9e2c49a91a42860114b69, type: 3}
       propertyPath: m_Name
       value: Gravestone_03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 638566593829800622, guid: 1ec9299476b9e2c49a91a42860114b69, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 638566593829800622, guid: 1ec9299476b9e2c49a91a42860114b69, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 638566593829800622, guid: 1ec9299476b9e2c49a91a42860114b69, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 638566593829800622, guid: 1ec9299476b9e2c49a91a42860114b69, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6782,6 +6854,18 @@ PrefabInstance:
     - target: {fileID: 258803337193345044, guid: 1ec9299476b9e2c49a91a42860114b69, type: 3}
       propertyPath: m_Name
       value: Gravestone_03 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 638566593829800622, guid: 1ec9299476b9e2c49a91a42860114b69, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 638566593829800622, guid: 1ec9299476b9e2c49a91a42860114b69, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 638566593829800622, guid: 1ec9299476b9e2c49a91a42860114b69, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 638566593829800622, guid: 1ec9299476b9e2c49a91a42860114b69, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9184,6 +9268,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 302562382}
     m_Modifications:
     - target: {fileID: 6326318619016121253, guid: a323d983331140b4baa852f1fe1384b3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6326318619016121253, guid: a323d983331140b4baa852f1fe1384b3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6326318619016121253, guid: a323d983331140b4baa852f1fe1384b3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6326318619016121253, guid: a323d983331140b4baa852f1fe1384b3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.027958
       objectReference: {fileID: 0}
@@ -10119,6 +10215,18 @@ PrefabInstance:
       value: Gravestone_01 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 7942869097525322293, guid: 09070712a69edca4ab5af3931618e4eb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942869097525322293, guid: 09070712a69edca4ab5af3931618e4eb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942869097525322293, guid: 09070712a69edca4ab5af3931618e4eb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942869097525322293, guid: 09070712a69edca4ab5af3931618e4eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.160961
       objectReference: {fileID: 0}
@@ -10251,6 +10359,18 @@ PrefabInstance:
     - target: {fileID: 7309744551883503759, guid: 09070712a69edca4ab5af3931618e4eb, type: 3}
       propertyPath: m_Name
       value: Gravestone_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942869097525322293, guid: 09070712a69edca4ab5af3931618e4eb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942869097525322293, guid: 09070712a69edca4ab5af3931618e4eb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942869097525322293, guid: 09070712a69edca4ab5af3931618e4eb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7942869097525322293, guid: 09070712a69edca4ab5af3931618e4eb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11183,7 +11303,7 @@ GameObject:
   - component: {fileID: 2054424495}
   m_Layer: 0
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11441,6 +11561,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 302562382}
     m_Modifications:
+    - target: {fileID: 6326318619016121253, guid: a323d983331140b4baa852f1fe1384b3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6326318619016121253, guid: a323d983331140b4baa852f1fe1384b3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6326318619016121253, guid: a323d983331140b4baa852f1fe1384b3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6326318619016121253, guid: a323d983331140b4baa852f1fe1384b3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.96096
