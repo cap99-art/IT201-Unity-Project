@@ -9,6 +9,8 @@ TagManager:
   - Spawner
   - Slow
   - Fast
+  - NextScene
+  - PreviousScene
   layers:
   - Default
   - TransparentFX

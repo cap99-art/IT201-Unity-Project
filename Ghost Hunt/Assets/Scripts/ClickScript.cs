@@ -46,6 +46,17 @@ public class ClickScript : MonoBehaviour
                 Debug.Log("Ghosts spawned!");
                 SpawnGhosts();
             }
+            if (clickedObject.CompareTag("NextScene"))
+            {
+                GameObject cam = GameObject.FindWithTag("MainCamera");
+                cam.transform.position = new Vector3(83.17f, 4.82f, 128.6f);
+            }
+            if (clickedObject.CompareTag("PreviousScene"))
+            {
+                GameObject cam = GameObject.FindWithTag("MainCamera");
+                cam.transform.position = new Vector3(82.5f, 4.82f, 72.81f);
+            }
+
 
             //Types of ghosts with differet scores, once clicked it will add
             //to the score, delete the ghost, and say this in the logs
