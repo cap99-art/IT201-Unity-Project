@@ -20,6 +20,7 @@ public class ClickScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //checks if the left mouse button was clicked in every frame
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             CheckMouseClick();
@@ -47,12 +48,16 @@ public class ClickScript : MonoBehaviour
                 SpawnGhosts();
                 return;
             }
+            //click an object with the "NextScene" tag to move the position
+            //of the main camera to the right.
             if (clickedObject.CompareTag("NextScene"))
             {
                 GameObject cam = GameObject.FindWithTag("MainCamera");
                 cam.transform.position = new Vector3(83.17f, 4.82f, 128.6f);
                 return;
             }
+            //click an object with the "PreviousScene" tag to move the position
+            //of the main camera to the left.
             if (clickedObject.CompareTag("PreviousScene"))
             {
                 GameObject cam = GameObject.FindWithTag("MainCamera");
@@ -60,9 +65,9 @@ public class ClickScript : MonoBehaviour
                 return;
             }
 
-
-            //Types of ghosts with differet scores, once clicked it will add
-            //to the score, delete the ghost, and say this in the logs
+            //Types of ghosts with different scores. Once an object with
+            //the stated tag is clicked, it will add to the score,
+            //delete the ghost, and say the current score in the logs
             if (clickedObject.CompareTag("Slow"))
             {
                 Debug.Log("You killed a ghost!");
@@ -79,6 +84,10 @@ public class ClickScript : MonoBehaviour
             }
             else
             {
+                //if any object with no tags are clicked, the current score
+                //either gets subtracted by 1, or if already 0, it equals to
+                //0 so that there are no negative scores.
+                //Outputs the current score in the logs.
                 score = score - 1;
                 if (score < 0)
                 {
@@ -86,8 +95,6 @@ public class ClickScript : MonoBehaviour
                 }
                 Debug.Log("You missed! Score = " + score);
             }
-
-
         }
     }
 
@@ -99,7 +106,8 @@ public class ClickScript : MonoBehaviour
             //changing with each loop so the ghosts end up forming columns
             Vector3 spawnPos = new Vector3((i * 2f + 40.9f), 0.27f, 58.79f);
 
-
+            //checks if i is bigger than 7, so that normal ghosts could be spawned,
+            //and if otherwise, the other ghosts will be spawn.
             if (i > 7)
             {
                 spawnedObjects[i] = Instantiate(ghost1, spawnPos, Quaternion.identity);

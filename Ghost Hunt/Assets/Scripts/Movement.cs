@@ -21,6 +21,8 @@ public class Movement : MonoBehaviour
    // Update is called once per frame
    void Update()
    {
+        //checks if the right wall is true, so that it can add a force that is opposite to it,
+        //and vise versa for checking the left wall's boolean.
        if (rwall)
        {
            rb.AddForce(Vector3.back * speed);
@@ -35,20 +37,18 @@ public class Movement : MonoBehaviour
        }
 }
   
-   //uhhhhhh try deleting this see if it still works, then try calling it in update
+    //gets called whenever a gameObject with the tag RightWall or LeftWall is
+    //collided with by another object, so that it can send a force the opposite way
+    //and set the boolean value to where it make sense.
    private void OnCollisionEnter(Collision collision)
    {
        if (collision.gameObject.CompareTag("RightWall"))
        {
-
-
            rb.AddForce(Vector3.back * speed);
            rwall = !rwall;
        }
        if (collision.gameObject.CompareTag("LeftWall"))
        {
-
-
            rb.AddForce(Vector3.forward * speed);
            lwall = !lwall;
            rwall = !rwall;
