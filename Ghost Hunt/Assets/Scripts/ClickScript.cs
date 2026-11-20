@@ -7,6 +7,8 @@ public class ClickScript : MonoBehaviour
 {
     [SerializeField] private float rayDistance = 100f;
     private int score = 0;
+    private int ghostsDestroyed = 0;
+    private int round = 1;
     [SerializeField] private GameObject ghost1;
     [SerializeField] private GameObject ghost2;
     private GameObject[] spawnedObjects = new GameObject[15];
@@ -14,7 +16,8 @@ public class ClickScript : MonoBehaviour
     // Start is called once before the first execution of Update
     void Start()
     {
-
+        SpawnGhosts();
+        Debug.Log("Round 1 started!");
     }
 
     // Update is called once per frame
@@ -44,16 +47,25 @@ public class ClickScript : MonoBehaviour
             //click an object with the "Spawner" tag to spawn ghosts
             if (clickedObject.CompareTag("Spawner"))
             {
-                Debug.Log("Ghosts spawned!");
-                SpawnGhosts();
+                if (ghostsDestroyed >= 12)
+                {
+                    SpawnGhosts();
+                    Debug.Log("Round" + round + "started!");
+                    ghostsDestroyed = 0;
+                    return;
+                }
                 return;
             }
             //click an object with the "NextScene" tag to move the position
             //of the main camera to the right.
             if (clickedObject.CompareTag("NextScene"))
             {
-                GameObject cam = GameObject.FindWithTag("MainCamera");
-                cam.transform.position = new Vector3(83.17f, 4.82f, 128.6f);
+                if (score >= 20)
+                {
+                    GameObject cam = GameObject.FindWithTag("MainCamera");
+                    cam.transform.position = new Vector3(83.17f, 4.82f, 128.6f);
+                    return;
+                }
                 return;
             }
             //click an object with the "PreviousScene" tag to move the position
@@ -73,14 +85,16 @@ public class ClickScript : MonoBehaviour
                 Debug.Log("You killed a ghost!");
                 Destroy(clickedObject);
                 score++;
-                Debug.Log("Score = " + score);
+                ghostsDestroyed++;
+                Debug.Log("Score = " + score + "     Ghosts Killed = " + ghostsDestroyed);
             }
             else if (clickedObject.CompareTag("Fast"))
             {
                 Debug.Log("You killed a ghost!");
                 Destroy(clickedObject);
                 score+= 2;
-                Debug.Log("Score = " + score);
+                ghostsDestroyed++;
+                Debug.Log("Score = " + score + "     Ghosts Killed = " + ghostsDestroyed);
             }
             else
             {
