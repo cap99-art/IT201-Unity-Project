@@ -11,6 +11,9 @@ TagManager:
   - Fast
   - NextScene
   - PreviousScene
+  - LockedScene
+  - Idle
+  - Button
   layers:
   - Default
   - TransparentFX

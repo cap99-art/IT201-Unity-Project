@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faeb8f9d38bbc054a9459859497d24df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movement
-  speed: 1
+  speed: 0.8
 --- !u!136 &-946529823357938707
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -4,7 +4,8 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
    [Header("Choose speed")]
-   [Range(1, 7)][SerializeField] private int speed = 1;
+   [Range(0, 7)][SerializeField] public float speed = 1;
+    public static float speedMultiplier = 1f;
    private bool rwall = false;
    private bool lwall = false;
    Rigidbody rb;
@@ -25,15 +26,15 @@ public class Movement : MonoBehaviour
         //and vise versa for checking the left wall's boolean.
        if (rwall)
        {
-           rb.AddForce(Vector3.back * speed);
+           rb.AddForce(Vector3.back * speed * speedMultiplier);
        }
        else if (lwall)
        {
-           rb.AddForce(Vector3.forward * speed);
+           rb.AddForce(Vector3.forward * speed * speedMultiplier);
        }
        else
        {
-           rb.AddForce(Vector3.forward * speed);
+           rb.AddForce(Vector3.forward * speed * speedMultiplier);
        }
 }
   
@@ -44,12 +45,12 @@ public class Movement : MonoBehaviour
    {
        if (collision.gameObject.CompareTag("RightWall"))
        {
-           rb.AddForce(Vector3.back * speed);
+           rb.AddForce(Vector3.back * speed * speedMultiplier);
            rwall = !rwall;
        }
        if (collision.gameObject.CompareTag("LeftWall"))
        {
-           rb.AddForce(Vector3.forward * speed);
+           rb.AddForce(Vector3.forward * speed * speedMultiplier);
            lwall = !lwall;
            rwall = !rwall;
        }
