@@ -28,10 +28,6 @@ public class Movement : MonoBehaviour
        {
            rb.AddForce(Vector3.back * speed * speedMultiplier);
        }
-       else if (lwall)
-       {
-           rb.AddForce(Vector3.forward * speed * speedMultiplier);
-       }
        else
        {
            rb.AddForce(Vector3.forward * speed * speedMultiplier);

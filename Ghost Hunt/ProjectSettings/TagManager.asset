@@ -14,6 +14,7 @@ TagManager:
   - LockedScene
   - Idle
   - Button
+  - Props
   layers:
   - Default
   - TransparentFX

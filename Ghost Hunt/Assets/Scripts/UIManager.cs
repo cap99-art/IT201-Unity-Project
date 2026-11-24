@@ -5,10 +5,9 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     [Header("1 - Text labels")]
-    [SerializeField] private TMP_Text CooldownText;
+    [SerializeField] private TMP_Text stats;
 
     [Header("2 - UI controls")]
-    [SerializeField] private Slider speedSlider;
     [SerializeField] private Toggle soundToggle;
 
     [Header("3 - Actual sound")]
@@ -24,8 +23,7 @@ public class UIManager : MonoBehaviour
     private bool audioPaused = false;
 
     private void Start()
-    {
-        if (speedSlider != null) currentSpeed = speedSlider.value;
+    { 
         if (soundToggle != null) soundEnabled = soundToggle.isOn;
         if (uiAudio != null)
         {
@@ -38,7 +36,15 @@ public class UIManager : MonoBehaviour
         Debug.Log("Week 9 UI is ready");
     }
 
-    
+    void Update()
+    {
+        stats.text = "[Round " + ClickScript.round + "]" +
+            "\nPoints: " + ClickScript.score + 
+            "\nKills: " + ClickScript.ghostsDestroyed;
+    }
+
+
+
     public void StartPressed()
     {
         currentState = "Playing";
