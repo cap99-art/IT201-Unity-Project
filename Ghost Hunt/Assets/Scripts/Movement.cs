@@ -4,9 +4,9 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
    [Header("Choose speed")]
-   [Range(0, 7)][SerializeField] public float speed = 1;
-    public static float speedMultiplier = 1f;
-   private bool rwall = false;
+   [Range(0, 7)][SerializeField] private float speed = 1; 
+    public static float speedMultiplier = 1f; //public so that the clickScript can access and change it
+    private bool rwall = false;
    private bool lwall = false;
    Rigidbody rb;
 

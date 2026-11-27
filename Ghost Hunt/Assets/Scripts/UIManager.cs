@@ -1,11 +1,14 @@
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     [Header("1 - Text labels")]
     [SerializeField] private TMP_Text stats;
+    [SerializeField] private TMP_Text AbilityText;
 
     [Header("2 - UI controls")]
     [SerializeField] private Toggle soundToggle;
@@ -13,101 +16,77 @@ public class UIManager : MonoBehaviour
     [Header("3 - Actual sound")]
     [SerializeField] private AudioSource uiAudio;
 
-    [Header("Other")]
-    public GameObject cubeToSpawn;
-
     // Values stored by the script (not extra GameObjects).
-    private string currentState = "Idle";
     private float currentSpeed = 5f;
+    private float cooldown = 0;
     private bool soundEnabled = true;
     private bool audioPaused = false;
 
-    private void Start()
-    { 
-        if (soundToggle != null) soundEnabled = soundToggle.isOn;
-        if (uiAudio != null)
-        {
-            uiAudio.playOnAwake = false;
-            uiAudio.loop = true; // long enough to demonstrate pause/resume
-            uiAudio.mute = !soundEnabled;
-            uiAudio.pitch = SpeedToPitch(currentSpeed);
-        }
-        RefreshLabels();
-        Debug.Log("Week 9 UI is ready");
-    }
+    //private void Start()
+    //{ 
+    //    if (soundToggle != null) soundEnabled = soundToggle.isOn;
+    //    if (uiAudio != null)
+    //    {
+    //        uiAudio.playOnAwake = false;
+    //        uiAudio.loop = true; // long enough to demonstrate pause/resume
+    //        uiAudio.mute = !soundEnabled;
+    //        uiAudio.pitch = SpeedToPitch(currentSpeed);
+    //    }
+    //}
 
     void Update()
     {
-        stats.text = "[Round " + ClickScript.round + "]" +
+        stats.text = "Level " + ClickScript.level + " [Round " + ClickScript.round + "]" +
             "\nPoints: " + ClickScript.score + 
             "\nKills: " + ClickScript.ghostsDestroyed;
-    }
 
-
-
-    public void StartPressed()
-    {
-        currentState = "Playing";
-        if (uiAudio != null && uiAudio.clip != null)
+        //creates a cooldown that counts from 5 to 0, including miliseconds, displayed as text UI.
+        //once the cooldown is over, the speedMultiplier goes back to normal speed.
+        if (cooldown > 0)
         {
-            if (audioPaused) uiAudio.UnPause(); // continue from pause position
-            else if (!uiAudio.isPlaying) uiAudio.Play(); // start from beginning
+            cooldown -= Time.deltaTime;
+            AbilityText.text = cooldown.ToString("F2");
+
+            if (cooldown <= 0)
+            {
+                Movement.speedMultiplier = 1f;
+                AbilityText.text = "";
+            }
         }
-        audioPaused = false;
-        RefreshLabels();
     }
 
-    public void PausePressed()
+    //when the ability is clicked, it checks the cost, and makes
+    //the cooldown 5f so that the Update function can count it down,
+    //and lowers the speedMultiplier so that ghosts are slower.
+    public void AbilityPressed()
     {
-        currentState = "Paused";
-        if (uiAudio != null && uiAudio.isPlaying)
+        if (ClickScript.score >= 5)
         {
-            uiAudio.Pause();
-            audioPaused = true;
+            ClickScript.score -= 5;
+            cooldown = 5f;
+            Movement.speedMultiplier = 0.1f;
         }
-        RefreshLabels();
     }
 
-    public void ResetPressed()
-    {
-        currentState = "Ready";
-        if (uiAudio != null) uiAudio.Stop(); // next Start plays from beginning
-        audioPaused = false;
-        RefreshLabels();
-    }
+    //public void StartPressed()
+    //{
+    //    currentState = "Playing";
+    //    if (uiAudio != null && uiAudio.clip != null)
+    //    {
+    //        if (audioPaused) uiAudio.UnPause(); // continue from pause position
+    //        else if (!uiAudio.isPlaying) uiAudio.Play(); // start from beginning
+    //    }
+    //    audioPaused = false;
+    //}
 
-    public void SpawnPressed()
-    {
-        currentState = "Spawned";
-        Vector3 spawnPosition = Vector3.up * 0.5f;
-        Instantiate(cubeToSpawn, spawnPosition, Quaternion.identity);
-        RefreshLabels();
-    }
+    //private float SpeedToPitch(float value)
+    //{
+    //    return Mathf.Lerp(0.5f, 1.5f, Mathf.Clamp01(value / 10f));
+    //}
 
-    // Values 0..10 map to AudioSource.pitch 0.5..1.5; 5 gives normal pitch (1.0).
-    public void SetSpeed(float value)
-    {
-        currentSpeed = value;
-        if (uiAudio != null) uiAudio.pitch = SpeedToPitch(currentSpeed);
-        RefreshLabels();
-    }
-
-    private float SpeedToPitch(float value)
-    {
-        return Mathf.Lerp(0.5f, 1.5f, Mathf.Clamp01(value / 10f));
-    }
-
-    public void SetSound(bool enabled)
-    {
-        soundEnabled = enabled;
-        if (uiAudio != null) uiAudio.mute = !enabled;
-        RefreshLabels();
-    }
-
-    private void RefreshLabels()
-    {
-      //  if (statusText != null) statusText.text = "Status: " + currentState;
-        //if (speedText != null) speedText.text = "Speed: " + currentSpeed.ToString("0.0");
-        //if (soundText != null) soundText.text = "Sound: " + (soundEnabled ? "On" : "Off");
-    }
+    //public void SetSound(bool enabled)
+    //{
+    //    soundEnabled = enabled;
+    //    if (uiAudio != null) uiAudio.mute = !enabled;
+    //}
 }
