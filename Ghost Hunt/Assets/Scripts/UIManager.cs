@@ -22,17 +22,35 @@ public class UIManager : MonoBehaviour
     private bool soundEnabled = true;
     private bool audioPaused = false;
 
-    //private void Start()
-    //{ 
-    //    if (soundToggle != null) soundEnabled = soundToggle.isOn;
-    //    if (uiAudio != null)
-    //    {
-    //        uiAudio.playOnAwake = false;
-    //        uiAudio.loop = true; // long enough to demonstrate pause/resume
-    //        uiAudio.mute = !soundEnabled;
-    //        uiAudio.pitch = SpeedToPitch(currentSpeed);
-    //    }
-    //}
+    private void Start()
+{
+    if (soundToggle != null)
+    {
+        soundToggle.isOn = soundEnabled;
+    }
+
+    if (uiAudio != null)
+    {
+        uiAudio.playOnAwake = false;
+        uiAudio.loop = true;
+        uiAudio.mute = !soundEnabled;
+
+        if (soundEnabled)
+        {
+            uiAudio.Play();
+        }
+    }
+}
+
+public void SetSound(bool enabled)
+{
+    soundEnabled = enabled;
+
+    if (uiAudio != null)
+    {
+        uiAudio.mute = !soundEnabled;
+    }
+}
 
     void Update()
     {
